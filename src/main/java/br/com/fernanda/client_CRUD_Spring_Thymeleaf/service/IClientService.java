@@ -1,10 +1,10 @@
-package br.com.fernanda.client_CRUD_Spring_Thymeleaf.dao;
+package br.com.fernanda.client_CRUD_Spring_Thymeleaf.service;
 
 import br.com.fernanda.client_CRUD_Spring_Thymeleaf.model.Client;
 
 import java.util.List;
 
-public interface IClientDao {
+public interface IClientService {
 
     void record(Client client);
     void update (Client client);
@@ -12,5 +12,4 @@ public interface IClientDao {
     List<Client> getAll();
     Client getById(long id);
     Client getByFiscal_code(String fiscal_code);
-
 }

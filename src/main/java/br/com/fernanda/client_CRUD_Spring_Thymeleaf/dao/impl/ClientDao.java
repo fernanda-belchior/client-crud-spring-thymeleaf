@@ -2,9 +2,7 @@ package br.com.fernanda.client_CRUD_Spring_Thymeleaf.dao.impl;
 
 import br.com.fernanda.client_CRUD_Spring_Thymeleaf.dao.IClientDao;
 import br.com.fernanda.client_CRUD_Spring_Thymeleaf.model.Client;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
