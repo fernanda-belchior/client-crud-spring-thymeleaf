@@ -20,11 +20,6 @@ public class ClientService implements IClientService {
     }
 
     @Override
-    public void update(Client client) {
-        clientDao.update(client);
-    }
-
-    @Override
     public void remove(long id) {
         clientDao.remove(id);
     }

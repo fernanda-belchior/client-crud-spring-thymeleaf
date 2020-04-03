@@ -7,7 +7,6 @@ import java.util.List;
 public interface IClientService {
 
     void record(Client client);
-    void update (Client client);
     void remove(long id);
     List<Client> getAll();
     Client getById(long id);

@@ -5,9 +5,12 @@ import br.com.fernanda.client_CRUD_Spring_Thymeleaf.model.Client;
 import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
+@Transactional
 public class ClientDao implements IClientDao {
 
     @PersistenceContext
@@ -18,11 +21,6 @@ public class ClientDao implements IClientDao {
          entityManager.persist(client);
     }
 
-    @Override
-    public void update(Client client) {
-        entityManager.merge(client);
-
-    }
 
     @Override
     public void remove(long id) {
@@ -32,8 +30,10 @@ public class ClientDao implements IClientDao {
 
     @Override
     public List<Client> getAll() {
-        return entityManager.createQuery("select c from " + Client.class + " c", Client.class)
-                .getResultList();
+        List<Client> list = null;
+        String sql = "SELECT client FROM " +Client.class + " client";
+        Query query = entityManager.createQuery(sql);
+        return query.getResultList();
     }
 
     @Override
