@@ -7,8 +7,7 @@ import java.util.List;
 public interface IClientService {
 
     void record(Client client);
-    void remove(long id);
+    void remove(Long id);
     List<Client> getAll();
     Client getById(long id);
-    Client getByFiscal_code(String fiscal_code);
 }

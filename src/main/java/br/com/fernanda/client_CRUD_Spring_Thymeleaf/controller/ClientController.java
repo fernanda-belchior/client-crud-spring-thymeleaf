@@ -5,7 +5,6 @@ import br.com.fernanda.client_CRUD_Spring_Thymeleaf.service.impl.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,8 +37,8 @@ public class ClientController {
         return add(clientService.getById(id));
     }
 
-    @DeleteMapping("/remove/{id}")
-    public ModelAndView remove(@PathVariable("id") long id) {
+    @GetMapping("/remove/{id}")
+    public ModelAndView remove(@PathVariable("id") Long id) {
         clientService.remove(id);
         return getAll();
     }
