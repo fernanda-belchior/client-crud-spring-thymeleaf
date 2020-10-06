@@ -1,7 +1,7 @@
-package br.com.fernanda.client_CRUD_Spring_Thymeleaf.controller;
+package br.com.fernanda.clientcrud.controller;
 
-import br.com.fernanda.client_CRUD_Spring_Thymeleaf.model.Client;
-import br.com.fernanda.client_CRUD_Spring_Thymeleaf.service.impl.ClientService;
+import br.com.fernanda.clientcrud.model.Client;
+import br.com.fernanda.clientcrud.service.impl.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -19,14 +19,14 @@ public class ClientController {
     private ClientService clientService;
 
     @GetMapping("/home")
-    public ModelAndView getAll(){
+    public ModelAndView getAll() {
         ModelAndView modelAndView = new ModelAndView("/home");
         modelAndView.addObject("clients", clientService.getAll());
-        return  modelAndView;
+        return modelAndView;
     }
 
     @GetMapping("/add")
-    public ModelAndView add(Client client){
+    public ModelAndView add(Client client) {
         ModelAndView modelAndView = new ModelAndView("/add");
         modelAndView.addObject("client", client);
         return modelAndView;
@@ -45,7 +45,7 @@ public class ClientController {
 
     @PostMapping("/save")
     public ModelAndView save(@Valid Client client, BindingResult result) {
-        if(result.hasErrors()) {
+        if (result.hasErrors()) {
             return add(client);
         }
 

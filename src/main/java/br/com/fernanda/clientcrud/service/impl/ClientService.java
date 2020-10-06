@@ -1,8 +1,8 @@
-package br.com.fernanda.client_CRUD_Spring_Thymeleaf.service.impl;
+package br.com.fernanda.clientcrud.service.impl;
 
-import br.com.fernanda.client_CRUD_Spring_Thymeleaf.dao.IClientDao;
-import br.com.fernanda.client_CRUD_Spring_Thymeleaf.model.Client;
-import br.com.fernanda.client_CRUD_Spring_Thymeleaf.service.IClientService;
+import br.com.fernanda.clientcrud.dao.IClientDao;
+import br.com.fernanda.clientcrud.model.Client;
+import br.com.fernanda.clientcrud.service.IClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package br.com.fernanda.client_CRUD_Spring_Thymeleaf.model;
+package br.com.fernanda.clientcrud.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
