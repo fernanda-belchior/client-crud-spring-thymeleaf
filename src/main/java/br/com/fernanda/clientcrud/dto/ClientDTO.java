@@ -1,10 +1,10 @@
-package br.com.fernanda.clientcrud.model;
+package br.com.fernanda.clientcrud.dto;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-public class Client {
+public class ClientDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +16,7 @@ public class Client {
 
     @Column(nullable = false, length = 11)
     @NotBlank
-    private String fiscal_code;
+    private String fiscalCode;
 
     public Long getId() {
         return id;
@@ -34,11 +34,11 @@ public class Client {
         this.name = name;
     }
 
-    public String getFiscal_code() {
-        return fiscal_code;
+    public String getFiscalCode() {
+        return fiscalCode;
     }
 
-    public void setFiscal_code(String fiscal_code) {
-        this.fiscal_code = fiscal_code;
+    public void setFiscalCode(String fiscalCode) {
+        this.fiscalCode = fiscalCode;
     }
 }

@@ -1,7 +1,7 @@
 package br.com.fernanda.clientcrud.controller;
 
-import br.com.fernanda.clientcrud.model.Client;
-import br.com.fernanda.clientcrud.service.impl.ClientService;
+import br.com.fernanda.clientcrud.dto.ClientDTO;
+import br.com.fernanda.clientcrud.service.impl.ClientServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -16,17 +16,17 @@ import javax.validation.Valid;
 public class ClientController {
 
     @Autowired
-    private ClientService clientService;
+    private ClientServiceImpl clientServiceImpl;
 
     @GetMapping("/home")
     public ModelAndView getAll() {
         ModelAndView modelAndView = new ModelAndView("/home");
-        modelAndView.addObject("clients", clientService.getAll());
+        modelAndView.addObject("clients", clientServiceImpl.getAll());
         return modelAndView;
     }
 
     @GetMapping("/add")
-    public ModelAndView add(Client client) {
+    public ModelAndView add(ClientDTO client) {
         ModelAndView modelAndView = new ModelAndView("/add");
         modelAndView.addObject("client", client);
         return modelAndView;
@@ -34,22 +34,22 @@ public class ClientController {
 
     @GetMapping("/edit/{id}")
     public ModelAndView edit(@PathVariable("id") long id) {
-        return add(clientService.getById(id));
+        return add(clientServiceImpl.getById(id));
     }
 
     @GetMapping("/remove/{id}")
     public ModelAndView remove(@PathVariable("id") Long id) {
-        clientService.remove(id);
+        clientServiceImpl.remove(id);
         return getAll();
     }
 
     @PostMapping("/save")
-    public ModelAndView save(@Valid Client client, BindingResult result) {
+    public ModelAndView save(@Valid ClientDTO client, BindingResult result) {
         if (result.hasErrors()) {
             return add(client);
         }
 
-        clientService.record(client);
+        clientServiceImpl.record(client);
 
         return getAll();
     }

@@ -10,13 +10,9 @@
     </parent>
     <groupId>br.com.fernanda</groupId>
     <artifactId>client-crud-spring-thymeleaf</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>Client CRUD Spring Thymeleaf</name>
     <description>Client CRUD with Spring and Thymeleaf</description>
-
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -32,7 +28,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>

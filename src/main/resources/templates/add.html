@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en-GB" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <title>Start Clients</title>
+    <title>Add Clients</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="panel panel-default">
     <div class="panel-heading">
-        <strong>Start Clients</strong>
+        <strong>Add Clients</strong>
     </div>
     <div class="panel-body">
         <form class="form-horizontal" th:object="${client}" th:action="@{/save}" method="POST" style="margin: 10px">
             <div class="form-group">
                 <fieldset>
+                    <legend>Form</legend>
                     <div class="form-group row">
                         <div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
                             <div th:each="detailedError : ${#fields.detailedErrors()}">
@@ -38,10 +39,10 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-4" th:classappend="${#fields.hasErrors('fiscal_code')}? 'has-error'">
-                            <label>Fiscal_code</label>
-                            <input type="text" class="form-control input-sm" th:field="*{fiscal_code}" maxlength="11"
-                                   placeholder="Type the fiscal_code"/>
+                        <div class="col-md-4" th:classappend="${#fields.hasErrors('fiscalCode')}? 'has-error'">
+                            <label>Fiscal code</label>
+                            <input type="text" class="form-control input-sm" th:field="*{fiscalCode}" maxlength="11"
+                                   placeholder="Type the fiscal code"/>
                         </div>
                     </div>
 

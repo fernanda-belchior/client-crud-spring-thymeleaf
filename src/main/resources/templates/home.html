@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en-GB" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -16,19 +16,20 @@
     <div class="panel-body">
         <div class="table-responsive">
             <table class="table table-sm table-striped table-hover table-bordered">
+                <caption>Table</caption>
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Fiscal_code</th>
-                    <th></th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Fiscal code</th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="client : ${clients}">
                     <td th:text="${client.id}"></td>
                     <td th:text="${client.name}"></td>
-                    <td th:text="${client.fiscal_code}"></td>
+                    <td th:text="${client.fiscalCode}"></td>
                     <td>
                         <div class="btn-group pull-right">
                             <a class="btn btn-sm btn-primary" th:href="@{/edit/{id}(id=${client.id})}">Edit</a>
